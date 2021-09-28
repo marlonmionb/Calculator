@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class='container'>
+        <div class='title'>
+            <h1>Calculator</h1>
+        </div>
+        <form>
+            <label for="left-operand">Left Operand</label>
+            <input type="text" value="" id='left-operand' name='left-operand'><br><br>
+
+            <label for="right-operand">Right Operand</label>
+            <input type="text" value="" id='right-operand' name='right-operand'><br><br>
+
+            <select name="operator" id="operator">
+                <option id='sum' value="sum">Sum</option>
+                <option id='subtraction' value="subtraction">Subtraction</option>
+                <option id='multiplication' value="multiplication">Multiplication</option>
+                <option id='division' value="division">Division</option>
+            </select><br><br>
+            
+            <input id='btn' type="button" value="Calculate">
+        </form>
+        <div>
+            <h3>Memory</h3>
+            <div class='memory'>
+
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./src/script/index.js"></script>
+</html>
