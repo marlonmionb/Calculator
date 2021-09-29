@@ -1,69 +1,51 @@
-const calculateBtn = document.getElementById('btn')
-const form = document.querySelector('.memory')
-let leftOperand = document.querySelector('#left-operand')
-let rightOperand = document.querySelector('#right-operand')
-let operator = document.querySelector('#operator')
+const calculateBtn = document.getElementById('btn-calculate')
+const memoryContainer = document.querySelector('.memory')
+const leftOperand = document.querySelector('#left-operand')
+const rightOperand = document.querySelector('#right-operand')
+const operator = document.querySelector('#operator')
+const clearBtn = document.querySelector('#btn-clear')
 
 
 
 function calculate() {
-    let registry = document.createElement("p");  
+    let newParagraph = document.createElement("p");  
 
     switch (operator.value) {
         case 'sum':
-            result = parseInt(leftOperand.value) + parseInt(rightOperand.value);  
-            registry.append(`${leftOperand.value} + ${rightOperand.value} = ${result}`)
-            form.appendChild(registry)
+            result = Number(leftOperand.value) + Number(rightOperand.value);  
+            newParagraph.append(`${leftOperand.value} + ${rightOperand.value} = ${result}`)
+            memoryContainer.appendChild(newParagraph)
             break;
 
         case 'subtraction':
-            result = parseInt(leftOperand.value) - parseInt(rightOperand.value);
-            registry.append(`${leftOperand.value} - ${rightOperand.value} = ${result}`)
-            form.appendChild(registry)
+            result = Number(leftOperand.value) - Number(rightOperand.value);
+            newParagraph.append(`${leftOperand.value} - ${rightOperand.value} = ${result}`)
+            memoryContainer.appendChild(newParagraph)
             break;
 
         case 'multiplication':
-            result = parseInt(leftOperand.value) * parseInt(rightOperand.value);
-            registry.append(`${leftOperand.value} * ${rightOperand.value} = ${result}`)
-            form.appendChild(registry)
+            result = Number(leftOperand.value) * Number(rightOperand.value);
+            newParagraph.append(`${leftOperand.value} * ${rightOperand.value} = ${result}`)
+            memoryContainer.appendChild(newParagraph)
             break;
 
         case 'division':
-            result = parseInt(leftOperand.value) / parseInt(rightOperand.value);
-            registry.append(`${leftOperand.value} / ${rightOperand.value} = ${result}`)
-            form.appendChild(registry)
+            result = Number(leftOperand.value) / Number(rightOperand.value);
+            newParagraph.append(`${leftOperand.value} / ${rightOperand.value} = ${result}`)
+            memoryContainer.appendChild(newParagraph)
             break;
-
         default:
-            return 'Insert a valid value'
+            break;
     }
 
     
 }
 
-function isNumeric(input){
-    if (typeof input != 'string'){
-        return true;
-    } else {
-        return false
-    }
+function clear(){
+
 }
 
 
 
 calculateBtn.addEventListener('click', calculate);
-
-
-
-/*
-const alertOperands = () => {
-    alert(parseInt(leftOperand.value) + parseInt(leftOperand.value));
-}
-*/
-
-
-/*
-const alertOperator = () => {
-    alert(operator.value);
-}
-*/
+clearBtn.addEventListener('click', clear)
