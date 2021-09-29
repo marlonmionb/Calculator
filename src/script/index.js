@@ -6,7 +6,6 @@ const operator = document.querySelector('#operator')
 const clearBtn = document.querySelector('#btn-clear')
 
 
-
 function calculate() {
     let newParagraph = document.createElement("p");  
 
@@ -41,11 +40,12 @@ function calculate() {
     
 }
 
-function clear(){
-
+function clearMemory(){
+    while (memoryContainer.firstChild) {
+        memoryContainer.removeChild(memoryContainer.firstChild);
+    }
 }
 
 
-
 calculateBtn.addEventListener('click', calculate);
-clearBtn.addEventListener('click', clear)
+clearBtn.addEventListener('click', clearMemory);
